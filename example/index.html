@@ -5,13 +5,12 @@
             document.onreadystatechange = () => {
                 if (document.readyState == "interactive") {
                     let world = new propellerSim.World(document.getElementById("sim"), document.getElementById("container"));
-
                 }
             }
         </script>
     </head>
     <body>
-        <div id="container" style="width: 100%; height: 100vh;">
+        <div id="container" style="width: 100%; height: 300vh;">
             <canvas style="border-style: solid" id="sim"></canvas>
         </div>
     </body>

@@ -64,6 +64,9 @@ export class World {
     }
 
     animate() {
+        if(!this.canvas.inView()) {
+            return
+        }
         if(!this.paused) {
             this.runPhysics()
         }

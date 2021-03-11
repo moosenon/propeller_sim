@@ -45,17 +45,21 @@
     }
 
     _createClass(Canvas, [{
+      key: "inView",
+      value: function inView() {
+        var rect = this.c.getBoundingClientRect();
+        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        return rect.top >= -this.height && rect.left >= -this.width && rect.right <= windowWidth + this.width && rect.bottom <= windowHeight + this.height;
+      }
+    }, {
       key: "autoResize",
       value: function autoResize() {
+        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
         var width;
-
-        if (this.c.parentElement == null) {
-          width = window.innerWidth;
-        } else {
-          width = this.c.parentElement.clientWidth;
-        }
-
-        var height = Math.ceil(window.innerHeight * maxHeightRatio);
+        width = this.c.parentElement == null ? windowWidth : this.c.parentElement.clientWidth;
+        var height = Math.ceil(windowHeight * maxHeightRatio);
         height = height < width ? height : width;
         this.c.style.width = width + "px";
         this.c.style.height = height + "px";
@@ -2882,6 +2886,10 @@
     }, {
       key: "animate",
       value: function animate() {
+        if (!this.canvas.inView()) {
+          return;
+        }
+
         if (!this.paused) {
           this.runPhysics();
         }
