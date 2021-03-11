@@ -29,7 +29,7 @@ export class World {
         } else {
             this.gui = new dat.GUI()
         }
-        this.stopped = false
+        this.stopped = true
         this.paused = false
 
         this.setupGui()

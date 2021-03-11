@@ -2852,7 +2852,7 @@
         this.gui = new GUI$1();
       }
 
-      this.stopped = false;
+      this.stopped = true;
       this.paused = false;
       this.setupGui();
       this.render();
