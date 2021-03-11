@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script src="../dist/propellerSim.js"></script>
+        <script type="text/javascript">
+            document.onreadystatechange = () => {
+                if (document.readyState == "interactive") {
+                    let world = new propellerSim.World(document.getElementById("sim"), document.getElementById("container"));
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container" style="width: 100%; height: 100vh;">
+            <canvas style="border-style: solid" id="sim"></canvas>
+        </div>
+    </body>
+</html>

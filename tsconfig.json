@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "pretty": true,
+        "strict": true,
+        "declaration": true,
+        "removeComments": true,
+        "lib": [
+            "es5",
+            "dom"
+        ],
+        "outDir": "dist",
+        "baseUrl": "./src"
+    },
+    "include": ["./src"],
+    "exclude": ["./node_modules/**/*", "**/*.test.ts"]
+}
